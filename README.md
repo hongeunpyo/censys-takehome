@@ -23,9 +23,12 @@ VITE_API_SECRET_KEY=<Your Censys Secret Key>
 
 Testing Steps:
 1. Page will initiate with a search with an empty query (return all results)
-2. You can scroll this page and navigate between next and prev from here
-3. Run a search by typing into the search bar at the top of the application, pressing enter or clicking the submit button will submit your query
-4. Note that page will load the search results
+2. Page will render cards that render ip and # of protocols
+3. You can scroll this page and navigate between next and prev from here
+4. Run a search by typing into the search bar at the top of the application, pressing enter or clicking the submit button will submit your query
+5. Note that page will load the results from the search query
+6. Cards are rendered with IP and # of protocols
+7. Previous button should be disabled as we are on a new search query
 
 Notes on pagination:
 - As pagination is defined by availability of next and prev cursors from search results, pagination button should only be enabled when those cursors are available from the API
