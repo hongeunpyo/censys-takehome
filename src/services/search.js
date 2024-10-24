@@ -11,16 +11,15 @@ const buildUrlWithQueryParams = (url, params) => {
 }
 
 const fetchResponse = async (url) => {
-    console.log(url)
     const headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', 'Basic ' + btoa(API_ID + ':' + API_KEY));
-    console.log(headers);
+
     const response = await fetch(url, {
         method: 'GET',
         headers,
     })
-    console.log(response);
+
     if (!response.ok) {
         throw new Error(`Failed with ${response.status} code`)
     }
@@ -28,7 +27,6 @@ const fetchResponse = async (url) => {
 }
 
 export const getSearchResults = async ({ queryKey }) => {
-    console.log(queryKey)
     const [, params] = queryKey;
     const url = buildUrlWithQueryParams(SEARCH_URL, params)
     return await fetchResponse(url);
